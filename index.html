@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Malla Interactiva - Profesorado de Inglés</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+      text-align: center;
+    }
+
+    h1 {
+      margin-bottom: 10px;
+    }
+
+    .año {
+      margin: 30px 0;
+    }
+
+    .titulo-año {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 10px;
+      justify-items: center;
+    }
+
+    .materia {
+      background-color: white;
+      border: 2px solid #333;
+      padding: 15px;
+      border-radius: 10px;
+      width: 100%;
+      max-width: 200px;
+      cursor: pointer;
+      transition: background 0.3s;
+      position: relative;
+    }
+
+    .materia.aprobada {
+      background-color: #4caf50;
+      color: white;
+      border-color: #4caf50;
+    }
+
+    .correlativa {
+      font-size: 12px;
+      color: #555;
+      margin-top: 5px;
+    }
+
+    #contador {
+      margin-top: 40px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+  <h1>Malla Interactiva - Profesorado de Inglés</h1>
+
+  <div id="contenedor-materias">
+    <!-- Acá van los años y las materias -->
+    
+    <div class="año">
+      <div class="titulo-año">1° Año</div>
+      <div class="grid">
+        <div class="materia" data-id="1" data-correlativas="">
+          Pedagogía
+        </div>
+        <div class="materia" data-id="2" data-correlativas="">
+          Didáctica General
+        </div>
+        <div class="materia" data-id="3" data-correlativas="">
+          Lectura, Escritura y Oralidad
+        </div>
+        <!-- Agregá todas las materias del 1° año acá -->
+      </div>
+    </div>
+
+    <div class="año">
+      <div class="titulo-año">2° Año</div>
+      <div class="grid">
+        <div class="materia" data-id="12" data-correlativas="1">
+          Historia y Política Educacional Argentina
+        </div>
+        <div class="materia" data-id="13" data-correlativas="6">
+          Sociología de la Educación
+        </div>
+        <!-- Agregá todas las materias del 2° año acá -->
+      </div>
+    </div>
+
+    <!-- Repetí para 3° y 4° año -->
+
+  </div>
+
+  <div id="contador">0% completado</div>
+
+  <script>
+    const materias = document.querySelectorAll('.materia');
+    const contador = document.getElementById('contador');
+
+    materias.forEach(materia => {
+      materia.addEventListener('click', () => {
+        // Correlativas
+        const correlativas = materia.dataset.correlativas;
+        if (correlativas) {
+          const necesarias = correlativas.split(',');
+          const aprobadas = Array.from(document.querySelectorAll('.materia.aprobada')).map(m => m.dataset.id);
+          const faltan = necesarias.filter(n => !aprobadas.includes(n));
+          if (faltan.length > 0) {
+            alert('Para aprobar esta materia necesitás tener aprobadas: ' + faltan.join(', '));
+            return;
+          }
+        }
+
+        materia.classList.toggle('aprobada');
+        actualizarContador();
+      });
+    });
+
+    function actualizarContador() {
+      const total = materias.length;
+      const aprobadas = document.querySelectorAll('.materia.aprobada').length;
+      const porcentaje = Math.round((aprobadas / total) * 100);
+      contador.textContent = `${porcentaje}% completado`;
+    }
+  </script>
+</body>
+</html>
