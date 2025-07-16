@@ -11,27 +11,22 @@
       padding: 20px;
       text-align: center;
     }
-
     h1 {
       margin-bottom: 10px;
     }
-
     .año {
       margin: 30px 0;
     }
-
     .titulo-año {
       font-size: 24px;
       margin-bottom: 10px;
     }
-
     .grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
       gap: 10px;
       justify-items: center;
     }
-
     .materia {
       background-color: white;
       border: 2px solid #333;
@@ -41,21 +36,12 @@
       max-width: 200px;
       cursor: pointer;
       transition: background 0.3s;
-      position: relative;
     }
-
     .materia.aprobada {
       background-color: #4caf50;
       color: white;
       border-color: #4caf50;
     }
-
-    .correlativa {
-      font-size: 12px;
-      color: #555;
-      margin-top: 5px;
-    }
-
     #contador {
       margin-top: 40px;
       font-size: 20px;
@@ -67,39 +53,73 @@
   <h1>Malla Interactiva - Profesorado de Inglés</h1>
 
   <div id="contenedor-materias">
-    <!-- Acá van los años y las materias -->
-    
+    <!-- Año 1 -->
     <div class="año">
       <div class="titulo-año">1° Año</div>
       <div class="grid">
-        <div class="materia" data-id="1" data-correlativas="">
-          Pedagogía
-        </div>
-        <div class="materia" data-id="2" data-correlativas="">
-          Didáctica General
-        </div>
-        <div class="materia" data-id="3" data-correlativas="">
-          Lectura, Escritura y Oralidad
-        </div>
-        <!-- Agregá todas las materias del 1° año acá -->
+        <div class="materia" data-id="1">Pedagogía</div>
+        <div class="materia" data-id="2">Didáctica General</div>
+        <div class="materia" data-id="3">Lectura, Escritura y Oralidad</div>
+        <div class="materia" data-id="4">Psicología Educacional</div>
+        <div class="materia" data-id="5">Sujetos de la Educación Inicial y Primaria</div>
+        <div class="materia" data-id="6">Problemática de la Educación Inicial, Primaria y Secundaria</div>
+        <div class="materia" data-id="7">Prácticas Discursivas en Inglés I</div>
+        <div class="materia" data-id="8">Gramática Inglesa I</div>
+        <div class="materia" data-id="9">Fonética y Fonología Inglesa I</div>
+        <div class="materia" data-id="10">EDI (1° año)</div>
+        <div class="materia" data-id="11">Práctica Profesional I</div>
       </div>
     </div>
 
+    <!-- Año 2 -->
     <div class="año">
       <div class="titulo-año">2° Año</div>
       <div class="grid">
-        <div class="materia" data-id="12" data-correlativas="1">
-          Historia y Política Educacional Argentina
-        </div>
-        <div class="materia" data-id="13" data-correlativas="6">
-          Sociología de la Educación
-        </div>
-        <!-- Agregá todas las materias del 2° año acá -->
+        <div class="materia" data-id="12" data-correlativas="1">Historia y Política Educacional Argentina</div>
+        <div class="materia" data-id="13" data-correlativas="6">Sociología de la Educación</div>
+        <div class="materia" data-id="14" data-correlativas="3">Tecnologías de la Información y la Comunicación</div>
+        <div class="materia" data-id="15" data-correlativas="2,5,6">Didáctica del Inglés I</div>
+        <div class="materia" data-id="16">EDI (2° año)</div>
+        <div class="materia" data-id="17" data-correlativas="4,5">Sujetos de la Educación Secundaria</div>
+        <div class="materia" data-id="18" data-correlativas="7,8">Prácticas Discursivas en Inglés II</div>
+        <div class="materia" data-id="19" data-correlativas="8">Gramática Inglesa II</div>
+        <div class="materia" data-id="20" data-correlativas="7,9">Fonética y Fonología Inglesa II</div>
+        <div class="materia" data-id="21" data-correlativas="7">Estudios Socioculturales y Literarios I</div>
+        <div class="materia" data-id="22">Práctica Profesional II</div>
       </div>
     </div>
 
-    <!-- Repetí para 3° y 4° año -->
+    <!-- Año 3 -->
+    <div class="año">
+      <div class="titulo-año">3° Año</div>
+      <div class="grid">
+        <div class="materia" data-id="23" data-correlativas="12">Filosofía de la Educación</div>
+        <div class="materia" data-id="24" data-correlativas="13">Formación Ética y Ciudadana</div>
+        <div class="materia" data-id="25" data-correlativas="15,17,18,19">Didáctica del Inglés II</div>
+        <div class="materia" data-id="26" data-correlativas="18,19">Prácticas Discursivas en Inglés III</div>
+        <div class="materia" data-id="27" data-correlativas="19">Lingüística I</div>
+        <div class="materia" data-id="28" data-correlativas="20">Fonética y Fonología Inglesa III</div>
+        <div class="materia" data-id="29" data-correlativas="18,19">Literatura Infantil y Juvenil</div>
+        <div class="materia" data-id="30" data-correlativas="18,21">Estudios Socioculturales y Literarios II</div>
+        <div class="materia" data-id="31">Práctica Profesional III</div>
+      </div>
+    </div>
 
+    <!-- Año 4 -->
+    <div class="año">
+      <div class="titulo-año">4° Año</div>
+      <div class="grid">
+        <div class="materia" data-id="32" data-correlativas="17">Educación Sexual Integral</div>
+        <div class="materia" data-id="33">EDI (4° año)</div>
+        <div class="materia" data-id="34" data-correlativas="25,26,31">Didáctica del Inglés III</div>
+        <div class="materia" data-id="35" data-correlativas="26,28">Prácticas Discursivas en Inglés IV</div>
+        <div class="materia" data-id="36" data-correlativas="26,29">Literatura Anglófona</div>
+        <div class="materia" data-id="37" data-correlativas="26,27">Lingüística II</div>
+        <div class="materia" data-id="38" data-correlativas="30">Estudios Socioculturales y Literarios III</div>
+        <div class="materia" data-id="39">EDI (4° año extra)</div>
+        <div class="materia" data-id="40">Práctica Profesional IV y Residencia</div>
+      </div>
+    </div>
   </div>
 
   <div id="contador">0% completado</div>
@@ -110,14 +130,13 @@
 
     materias.forEach(materia => {
       materia.addEventListener('click', () => {
-        // Correlativas
         const correlativas = materia.dataset.correlativas;
         if (correlativas) {
           const necesarias = correlativas.split(',');
           const aprobadas = Array.from(document.querySelectorAll('.materia.aprobada')).map(m => m.dataset.id);
           const faltan = necesarias.filter(n => !aprobadas.includes(n));
           if (faltan.length > 0) {
-            alert('Para aprobar esta materia necesitás tener aprobadas: ' + faltan.join(', '));
+            alert('Para cursar esta materia necesitás aprobar: ' + faltan.join(', '));
             return;
           }
         }
