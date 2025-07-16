@@ -93,31 +93,49 @@
 
   <script>
     const materiasData = [
-      // [ID, Nombre, Correlativas (array de ID)]
-      [1, "Gramática Inglesa I", []],
-      [2, "Fonética y Fonología Inglesa I", []],
-      [3, "Prácticas Discursivas en Inglés I", []],
-      [4, "Gramática Inglesa II", [1]],
-      [5, "Fonética y Fonología Inglesa II", [2]],
-      [6, "Prácticas Discursivas en Inglés II", [1,2,3]],
-      [7, "Estudios Socioculturales y Literarios I", [3]],
-      [8, "Gramática Inglesa III", [4]],
-      [9, "Fonética y Fonología Inglesa III", [5]],
-      [10, "Prácticas Discursivas en Inglés III", [4,5,6]],
-      [11, "Literatura Infantil y Juvenil", [6]],
-      [12, "Estudios Socioculturales y Literarios II", [6,7]],
-      [13, "Lingüística I", [4]],
-      [14, "Didáctica del Inglés I", []],
-      [15, "Didáctica del Inglés II", [6,14]],
-      [16, "Didáctica del Inglés III", [10,15]],
-      [17, "Lingüística II", [13,10]],
-      [18, "Literatura Anglófona", [10,11]],
-      [19, "Estudios Socioculturales y Literarios III", [12]],
-      [20, "Prácticas Discursivas en Inglés IV", [10]],
-      [21, "Práctica Profesional I", []],
-      [22, "Práctica Profesional II", [21]],
-      [23, "Práctica Profesional III", [22]],
-      [24, "Práctica Profesional IV y Residencia", [23]],
+      [1, "Pedagogía", []],
+      [2, "Didáctica General", []],
+      [3, "Lectura, Escritura y Oralidad", []],
+      [4, "Psicología Educacional", []],
+      [5, "Sujetos de la Educación Inicial y Primaria", []],
+      [6, "Problemática de la Educación Inicial, Primaria y Secundaria", []],
+      [7, "Prácticas Discursivas en Inglés I", []],
+      [8, "Gramática Inglesa I", []],
+      [9, "Fonética y Fonología Inglesa I", []],
+      [10, "EDI (1° año)", []],
+      [11, "Práctica Profesional I", []],
+
+      [12, "Historia y Política Educacional Argentina", [1]],
+      [13, "Sociología de la Educación", [6]],
+      [14, "Tecnologías de la Información y la Comunicación", [3]],
+      [15, "Didáctica del Inglés I", [2,5,6]],
+      [16, "EDI (2° año)", []],
+      [17, "Sujetos de la Educación Secundaria", [4,5]],
+      [18, "Prácticas Discursivas en Inglés II", [7,8]],
+      [19, "Gramática Inglesa II", [8]],
+      [20, "Fonética y Fonología Inglesa II", [7,9]],
+      [21, "Estudios Socio-culturales y Literarios I", [7]],
+      [22, "Práctica Profesional II", []],
+
+      [23, "Filosofía de la Educación", [12]],
+      [24, "Formación Ética y Ciudadana", [13]],
+      [25, "Didáctica del Inglés II", [15,17,18,19]],
+      [26, "Prácticas Discursivas en Inglés III", [18,19]],
+      [27, "Lingüística I", [19]],
+      [28, "Fonética y Fonología Inglesa III", [20]],
+      [29, "Introducción a la Literatura y Literatura Infanto-Juvenil", [18,19]],
+      [30, "Estudios Socio-culturales y Literarios II", [18,21]],
+      [31, "Práctica Profesional III", []],
+
+      [32, "Educación Sexual Integral", [17]],
+      [33, "EDI (4° año)", []],
+      [34, "Didáctica del Inglés III", [26,25,31]],
+      [35, "Prácticas Discursivas en Inglés IV", [26,28]],
+      [36, "Literatura Anglófona", [26,29]],
+      [37, "Lingüística II", [26,27]],
+      [38, "Estudios Socio-culturales y Literarios III", [30]],
+      [39, "EDI (4° año extra)", []],
+      [40, "Práctica Profesional IV y Residencia", []],
     ];
 
     const contenedor = document.getElementById("contenedor-materias");
@@ -127,10 +145,10 @@
 
     function crearBloques() {
       const años = {
-        '1° Año': [1,2,3,21],
-        '2° Año': [4,5,6,7,14,22],
-        '3° Año': [8,9,10,11,12,13,15,23],
-        '4° Año': [16,17,18,19,20,24]
+        '1° Año': [1,2,3,4,5,6,7,8,9,10,11],
+        '2° Año': [12,13,14,15,16,17,18,19,20,21,22],
+        '3° Año': [23,24,25,26,27,28,29,30,31],
+        '4° Año': [32,33,34,35,36,37,38,39,40]
       };
 
       for (let [titulo, ids] of Object.entries(años)) {
